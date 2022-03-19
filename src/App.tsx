@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
+import PokemonList from './components/Pokemon/PokemonList';
+import RegionList from './components/Regions/RegionList';
 import pokeService from './services/pokeService'
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
   return (
     <div className="app">
       <Header />
+      {dataMap.regions && <RegionList currRegion={currRegion} changeRegion={changeRegion} regions={dataMap.regions} />}
+      {dataMap.pokemonsMap && <PokemonList pokemonsRaw={dataMap.pokemonsMap[currRegion]} />}
     </div>
   );
 }
