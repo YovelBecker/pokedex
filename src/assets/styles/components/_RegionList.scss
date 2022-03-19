@@ -1,0 +1,20 @@
+.region-list-container {
+  display: flex;
+  overflow-x: scroll;
+  width:unset;
+  margin-bottom: 20px;
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  .region-preview {
+    margin-inline-end: 20px;
+    padding: 10px 25px;
+    background-color: $blue;
+    border-radius: 10px;
+    text-transform: capitalize;
+    color: white;
+    &.selected{
+      background-color: $blue-light;
+    }
+  }
+}
