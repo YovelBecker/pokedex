@@ -1,0 +1,57 @@
+// FADE
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+// SHRINK FADE
+.shrink-fade-enter-active {
+    transition: opacity 0.3s, transform 0.2s;
+}
+.shrink-fade-enter,
+.shrink-fade-leave-to {
+    opacity: 0;
+    transform: scaleY(0);
+}
+.shrink-fade-leave {
+    opacity: 0;
+    transform: scaleY(0);
+}
+
+// PAGE-FADE
+.page-fade-leave-active,
+.page-fade-enter-active {
+    transform: translateY(0);
+}
+.page-fade-enter-active {
+    transition: opacity 0.3s, transform 0.6s ease-out;
+}
+.page-fade-leave-active {
+    transition: opacity 0.3s, transform 0.4s ease-in;
+}
+
+.page-fade-leave-to,
+.page-fade-enter {
+    opacity: 0;
+}
+.page-fade-leave-to {
+    transform: translateY(150%);
+}
+.page-fade-enter {
+    transform: translateY(-150%);
+}
+
+// SLIDE-UP
+.slide-up-enter-active,
+.slide-up-leave-active {
+    transition: transform 0.3s ease-out;
+    transform: translateY(0);
+}
+.slide-up-enter,
+.slide-up-leave-to {
+    transform: translateY(150%);
+}

@@ -1,0 +1,44 @@
+// @font-face {
+//     font-family: caveat;
+//     src: url(~@/assets/fonts/Caveat/Caveat-Regular.ttf);
+// }
+
+// Page-Title
+h1 {
+    font-size: rem(36px) ;
+    line-height: rem(48px) ;
+    text-transform: capitalize;
+}
+
+h2 {
+    font-size: rem(28px);
+    line-height: rem(36px);
+    text-transform: capitalize;
+}
+
+h3 {
+    font-size: rem(20px);
+    line-height: rem(24px);
+    text-transform: capitalize;
+}
+
+h4 {
+    // font-size: rem(18px);
+    font-size: $fontSizeMedium;
+    line-height: rem(24px);
+    text-transform: capitalize;
+}
+
+h5 {
+    font-size: rem(12px);
+    line-height: rem(24px);
+    letter-spacing: rem(1px);
+    text-transform: capitalize;
+}
+
+h6 {
+    font-size: rem(10px);
+    line-height: rem(18px);
+    letter-spacing: rem(1.2px);
+    text-transform: capitalize;
+}

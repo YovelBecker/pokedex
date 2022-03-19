@@ -1,0 +1,72 @@
+// Colors
+
+$white: #fff !default;
+$white-transparent: #ffffffbd;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$regGray: #7d7e80;
+$darkGray: #3d3d3d;
+$darkerGray: #222222;
+
+// Pallette
+
+$blue-darker:#0B132B;
+$blue-dark:#1C2541;
+$blue:#3A506B;
+$blue-light:#5BC0BE;
+$blue-lighter: #6FFFE9;
+
+// Breakpoints
+$mobile-breakpoint: 460px;
+$narrow-breakpoint: 720px;
+$normal-breakpoint: 980px;
+$wide-breakpoint: 1200px;
+
+
+// Fonts
+$font-family-secular-one: 'secularOne', sans-serif;
+$font-family-arial: Arial, Helvetica, sans-serif;
+
+$fontStizeSmall: 0.75rem; //12px;
+$fontSizeNormal: 0.875rem; //14px;
+$fontSizeMedium: 1.125rem; //18px;
+$fontSizeBig: 1.25rem; //20px;
+$fontSizeBig2: 2.125rem; //34px;
+$fontSizeBigger: 2.5rem; //40px;
+
+
+$typeColors : (
+  "normal": #A8A878,
+  "fighting": #C03028,
+  "flying": #A890F0,
+  "poison": #A040A0,
+  "ground": #E0C068,
+  "rock": #B8A038,
+  "bug": #A8B820,
+  "ghost": #705898,
+  "steel": #B8B8D0,
+  "fire": #FA6C6C,
+  "water": #6890F0,
+  "grass": #48CFB2,
+  "electric": #FFCE4B,
+  "psychic": #F85888,
+  "ice": #98D8D8,
+  "dragon": #7038F8,
+  "dark": #705848,
+  "fairy": #EE99AC
+);
+
+@each $type, $typeColor in $typeColors {
+  .pokemon-type-#{$type} {
+    background-color: $typeColor;
+  }
+}
