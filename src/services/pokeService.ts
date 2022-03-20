@@ -28,11 +28,31 @@ async function getData() {
   return acc
 }
 
+function getPokemons(regionId: string): IPokemonRaw[] {
+  return pokemonsMap ? pokemonsMap[regionId] : [];
+}
+
 function getPokemonList(pokemon_entries: any) {
   const pokemons = pokemon_entries.map((pokemon: any, idx: number) => {
     return { pokedexId: idx, url: pokemon.pokemon_species.url }
   });
   return pokemons
+}
+
+async function getStarters() {
+  let startersRaw: IPokemonRaw[] = [];
+  let startersMap: any = {};
+  for (const regionId in pokemonsMap) {
+    const pokemons = pokemonsMap[regionId];
+    if(regionId === '5'){
+      startersRaw = [pokemons[1], pokemons[4], pokemons[7]];
+    } else {
+      startersRaw = [pokemons[0], pokemons[3], pokemons[6]];
+    }
+    const starters: IPokemonItem[] = await getPokemonData(startersRaw);
+    startersMap[regionId] = starters
+  }
+  return startersMap
 }
 
 async function getPokemonData(pokemonsRaw: IPokemonRaw[]) {
@@ -96,6 +116,6 @@ async function getPokemonData(pokemonsRaw: IPokemonRaw[]) {
   return pokemons
 }
 
-const pokeService = { getData, getPokemonData }
+const pokeService = { getData, getPokemonData, getPokemons, getStarters }
 
-export default pokeService ;
+export default pokeService;
