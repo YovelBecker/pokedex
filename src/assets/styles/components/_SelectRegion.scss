@@ -1,0 +1,36 @@
+.select-region-container {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  .select-region-preview {
+    border-radius: 15px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 8px 22px -11px rgb(65, 65, 65, 0.3);
+    position: relative;
+    overflow: hidden;
+    color: #000;
+    .sprites-container {
+      margin-top: 10px;
+      img.sprite {
+        width: 50px;
+        &:nth-child(2) {
+          position: relative;
+          bottom: 5px;
+        }
+      }
+    }
+    img.pokeball {
+      position: absolute;
+      z-index: -1;
+      width: 22vw;
+      opacity: 0.08;
+      right: -5px;
+      bottom: -15px;
+    }
+  }
+}
