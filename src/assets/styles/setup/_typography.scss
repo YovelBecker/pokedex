@@ -1,13 +1,20 @@
-// @font-face {
-//     font-family: caveat;
-//     src: url(~@/assets/fonts/Caveat/Caveat-Regular.ttf);
-// }
+@font-face {
+    font-family: san-francisco;
+    src: url(../fonts/circular-std-medium-500.ttf);
+}
+@font-face {
+    font-family: san-francisco-light;
+    src: url(../fonts/sf/pro/SF-Pro-Display-Light.otf);
+}
+@font-face {
+    font-family: san-francisco-bold;
+    src: url(../fonts/sf/pro/SF-Pro-Display-Light.otf);
+}
 
 // Page-Title
 h1 {
     font-size: rem(36px) ;
     line-height: rem(48px) ;
-    text-transform: capitalize;
 }
 
 h2 {
