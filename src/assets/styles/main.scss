@@ -2,18 +2,20 @@
 // @import 'vendors/reset';
 
 // Setup
-@import 'setup/variables';
-@import 'setup/mixins';
-@import 'setup/typography';
+@import "setup/variables";
+@import "setup/mixins";
+@import "setup/typography";
 
 // Basics
-@import 'basics/app';
-@import 'basics/base';
-@import 'basics/animations';
+@import "basics/app";
+@import "basics/base";
+@import "basics/animations";
 
 // Components
-@import './components/app';
-@import './components/Header';
-@import './components/RegionList';
-@import './components/PokemonPreview';
-@import './components/PokemonList';
+@import "./components/app";
+@import "./components/Home";
+@import "./components/Header";
+@import "./components/RegionList";
+@import "./components/PokemonPreview";
+@import "./components/PokemonList";
+@import "./components/SelectRegion";
