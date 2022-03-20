@@ -14,7 +14,7 @@ function App() {
     const loadRegions = async () => {
       const { regions, pokemonsMap } = await pokeService.getData();
       setCurrRegion(Object.keys(pokemonsMap)[0])
-      setRegions( regions)
+      setRegions(regions)
     }
     loadRegions();
   }, [])
