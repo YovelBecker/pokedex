@@ -3,15 +3,15 @@
   height: 140px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: relative;
   border-radius: 15px;
-  padding: 8px 15px;
+  padding: 20px 15px 5px;
   text-transform: capitalize;
   color: white;
   h4{
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 10px;
+    max-width: 120px;
   }
   p.pokedex-id {
     position: absolute;
@@ -23,8 +23,10 @@
   .pokemon-types-container {
     display: flex;
     flex-direction: column;
+    position: absolute;
+    top: 70px;
     .pokemon-type {
-      font-size: 12px;
+      font-size: 10px;
       background-color: rgba(235, 235, 235, 0.30);
       width: fit-content;
       margin-bottom: 8px;
