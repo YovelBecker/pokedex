@@ -1,9 +1,12 @@
 .region-list-container {
   display: flex;
   overflow-x: scroll;
-  width:unset;
+  width: 100vw;
   margin-bottom: 20px;
-  ::-webkit-scrollbar{
+  padding: 0px 5px;
+  position: relative;
+  left: -15px;
+  ::-webkit-scrollbar {
     display: none;
   }
   .region-preview {
@@ -13,7 +16,7 @@
     border-radius: 10px;
     text-transform: capitalize;
     color: white;
-    &.selected{
+    &.selected {
       background-color: $blue-light;
     }
   }
