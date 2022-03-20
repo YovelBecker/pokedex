@@ -22,28 +22,33 @@ export default function SelectRegion() {
       const startersMap = await pokeService.getStarters();
       setStartersMap(startersMap);
     }
-    getStarters()
+    setTimeout(getStarters, 2000);
   }, [])
   return (
-    <div className="select-region-container">
-      {Object.keys(startersMap).map((gen: string) => {
-        const starters = startersMap[gen];
-        return (
-          <Link key={gen} to={`/region/${gen}`} className="select-region-preview">
-            <img
-              className="pokeball"
-              src={require('../../assets/img/pokeball.png')}
-              alt="pokeball" />
+    <>
+      {!Object.keys(startersMap).length ?
+        <img className="pokeball loader" src={require('../../assets/img/pokeball.png')} alt="pokeball" /> :
+        <div className="select-region-container">
+          {Object.keys(startersMap).map((gen: string) => {
+            const starters = startersMap[gen];
+            return (
+              <Link key={gen} to={`/region/${gen}`} className="select-region-preview">
+                <img
+                  className="pokeball"
+                  src={require('../../assets/img/pokeball.png')}
+                  alt="pokeball" />
 
-            <h4>Generation {romans[(+gen) - 1]}</h4>
-            <div className="sprites-container">
-              {starters.map(starter => (
-                <img key={starter.pokedexId} src={starter.img} alt={starter.name} className="sprite" />
-              ))}
-            </div>
-          </Link>
-        )
-      })}
-    </div>
+                <h4>Generation {romans[(+gen) - 1]}</h4>
+                <div className="sprites-container">
+                  {starters.map(starter => (
+                    <img key={starter.pokedexId} src={starter.img} alt={starter.name} className="sprite" />
+                  ))}
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      }
+    </>
   )
 }
