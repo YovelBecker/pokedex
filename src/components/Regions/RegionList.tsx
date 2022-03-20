@@ -13,7 +13,7 @@ export default function RegionList({ regions, changeRegion, currRegion }: Region
 
   useEffect(() =>{
     changeRegion(params.regionId)
-  }, [params])
+  }, [params, changeRegion])
 
   return (
     <div className="region-list-container">

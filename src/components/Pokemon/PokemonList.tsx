@@ -28,7 +28,7 @@ export default function PokemonList() {
     }
     getPokemons();
     return () => { }
-  }, [regionId])
+  }, [regionId, navigate])
 
 
   return (

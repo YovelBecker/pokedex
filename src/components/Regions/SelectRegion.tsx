@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { IPokemonItem } from '../../models/Pokemon'
-import { Region } from '../../models/Region'
 import pokeService from '../../services/pokeService'
 
 type StartersMap = {

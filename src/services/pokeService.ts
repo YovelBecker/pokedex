@@ -3,7 +3,6 @@ import { Region } from '../models/Region';
 import { IPokemonItem, IPokemonRaw } from '../models/Pokemon';
 
 let pokemonsMap: any;
-let regions;
 
 async function getData() {
   const regs = (await (httpService.get('https://pokeapi.co/api/v2/generation'))).results;
@@ -24,7 +23,6 @@ async function getData() {
     acc.pokemonsMap[id] = getPokemonList(pokedex.pokemon_entries);
   }
   pokemonsMap = acc.pokemonsMap;
-  regions = acc.regions;
   return acc
 }
 
