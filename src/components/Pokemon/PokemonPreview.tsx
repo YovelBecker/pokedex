@@ -19,7 +19,8 @@ export default function PokemonPreview({ pokemon, idx }: { pokemon: IPokemonItem
           </div>
         ))}
       </div>
-      <img src={pokemon.img} alt={pokemon.name} />
+      <img className="pokeball" src={require('../../assets/img/pokeball.png')} alt="pokeball" />
+      <img className="pokemon-sprite" src={pokemon.img} alt={pokemon.name} />
     </div>
 
   )
