@@ -3,3 +3,16 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
+img.pokeball.loader {
+  max-width: 40%;
+  margin: 0 auto;
+  margin-top: 80px;
+  opacity: 0.1;
+  animation: rotate 3s infinite;
+}
+
+@keyframes rotate {
+  50% {
+    transform: rotate(180deg);
+  }
+}
