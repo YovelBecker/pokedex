@@ -40,15 +40,21 @@ function getPokemonList(pokemon_entries: any) {
 async function getStarters() {
   let startersRaw: IPokemonRaw[] = [];
   let startersMap: any = {};
-  for (const regionId in pokemonsMap) {
-    const pokemons = pokemonsMap[regionId];
-    if(regionId === '5'){
-      startersRaw = [pokemons[1], pokemons[4], pokemons[7]];
-    } else {
-      startersRaw = [pokemons[0], pokemons[3], pokemons[6]];
+  if (localStorage.getItem('starters')) {
+    // @ts-ignore
+    startersMap = JSON.parse(localStorage.getItem('starters'));
+  } else {
+    for (const regionId in pokemonsMap) {
+      const pokemons = pokemonsMap[regionId];
+      if (regionId === '5') {
+        startersRaw = [pokemons[1], pokemons[4], pokemons[7]];
+      } else {
+        startersRaw = [pokemons[0], pokemons[3], pokemons[6]];
+      }
+      const starters: IPokemonItem[] = await getPokemonData(startersRaw);
+      startersMap[regionId] = starters
     }
-    const starters: IPokemonItem[] = await getPokemonData(startersRaw);
-    startersMap[regionId] = starters
+    localStorage.setItem('starters', JSON.stringify(startersMap))
   }
   return startersMap
 }
