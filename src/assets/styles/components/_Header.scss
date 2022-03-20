@@ -1,3 +1,19 @@
 header {
   margin-bottom: 20px;
+  padding-top: 51px;
+  text-transform: capitalize;
+  img.pokeball{
+    z-index: 0;
+    width:250px;
+    position: fixed;
+    right: -65px;
+    top: -65px;
+    opacity: 0.1;
+  }
+  .header-nav{
+    display: flex;
+    justify-content: space-between;
+    padding-inline-end: 15px;
+    margin-bottom: 20px;
+  }
 }
