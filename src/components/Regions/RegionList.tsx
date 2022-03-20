@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom';
 import { IRegion } from '../../models/Region';
 
 type RegionListProps = {
@@ -8,19 +9,29 @@ type RegionListProps = {
 }
 
 export default function RegionList({ regions, changeRegion, currRegion }: RegionListProps) {
+  const params = useParams();
+
+  useEffect(() =>{
+    changeRegion(params.regionId)
+  }, [params])
+
   return (
     <div className="region-list-container">
       {regions.map(region => (
-        <div
+        <Link
           key={region.id}
-          onClick={() => changeRegion(region.regionId)}
-          className={`
-          region-preview
-          ${region.regionId === currRegion ? 'selected' : ''}
-        `}
+          to={`/region/${region.regionId}`}
         >
-          {region.name}
-        </div>
+          <div
+            onClick={() => changeRegion(region.regionId)}
+            className={`
+          region-preview
+          ${params.regionId && region.regionId === +params.regionId ? 'selected' : ''}
+          `}
+          >
+            {region.name}
+          </div>
+        </Link>
       ))}
     </div>
   )
