@@ -8,3 +8,4 @@ pokemonSpecie.flavor_text_entries.find(flavor => flavor.language.name === 'en').
 
 * Add routing to app
 * build pokemon details page
+<!-- Change -->
